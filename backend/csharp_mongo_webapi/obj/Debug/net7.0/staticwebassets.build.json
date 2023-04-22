@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "N0Twnc00q7fN8Rlqt7sc2gunyqsAg/0ncgL+hSawR0w=",
+  "Source": "csharp_mongo_webapi",
+  "BasePath": "_content/csharp_mongo_webapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

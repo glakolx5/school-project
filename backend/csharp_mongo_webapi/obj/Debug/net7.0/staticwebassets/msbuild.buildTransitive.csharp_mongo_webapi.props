@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/csharp_mongo_webapi.props" />
+</Project>
