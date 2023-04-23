@@ -1,5 +1,10 @@
+import { link } from 'fs'
 import Head from 'next/head'
-export default function Home() {
+
+
+
+export default function Home({ infos }: HomeProps) {
+
   return (
     <>
       <Head>
@@ -8,7 +13,54 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='text-3xl font-bold underline'>hello world</div>
+      <div className='py-32 px-32'>
+
+        <div className=''>
+          <div>hello</div>
+
+          <ul className='py-4'>
+            {infos.map(({id, name, timeFrom, timeTo, cvrNR, address}) => (
+              <>
+              <li key={id}>id: {id}</li>
+              <li key={id}>Name: {name}</li>
+              <li key={id}>Time from: {timeFrom}</li>
+              <li key={id}>Time to {timeTo}</li>
+              <li key={id}>CVR number {cvrNR}</li>
+              <li key={id}>Address:  {address}</li>
+              <div className='py-4'>
+
+              </div>
+              </>
+            ))}
+          </ul>
+
+
+        </div>
+
+      </div>
     </>
   )
+}
+
+interface HomeProps {
+  infos: {
+    id: string;
+    name: string;
+    timeFrom: string;
+    timeTo: string;
+    cvrNR: string;
+    address: string;
+  }[];
+}
+export async function getStaticProps() {
+
+  const res = await fetch('http://localhost:5216/api/Info');
+
+  const infos = await res.json();
+
+  return {
+    props: {
+      infos,
+    }
+  }
 }

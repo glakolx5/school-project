@@ -35,7 +35,7 @@ const Navbar = () => {
                 {/* this is link to my home and styling of my logo */}
                 <div>
                     <Link href='/'>
-                        <div className='text-2xl font-mono font-extralight tracking-tighter underline underline-offset-1'>
+                        <div className='text-2xl font-mono font-extralight tracking-tighter underline underline-offset-1 italic decoration-1 align-middlefirst-letter'>
                             Akamali's School Project
                         </div>
                     </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <ul className='hidden sm:flex '>
                     {
                         MENU_LIST.map((mapthis) => (
-                            <li className='p-5 font-mono text-xl font-extrabold'>
+                            <li  key={mapthis.href} className='p-5 font-mono text-xl font-extrabold hover:underline'>
                                 <Link href={mapthis.href}>{mapthis.text}</Link>
                             </li>
                         ))
@@ -68,7 +68,7 @@ const Navbar = () => {
 
                             //Loop of MENU_LIST, names and links
                             MENU_LIST.map((mapthis) => (
-                                <li className='p-4 text-3xl border-8 border-green-300'>
+                                <li key={mapthis.href} className='p-4 text-3xl border-8 border-green-300'>
                                     <Link href={mapthis.href}>{mapthis.text}</Link>
                                 </li>
                             ))
