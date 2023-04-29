@@ -12,21 +12,20 @@ export default function Home({ infos }: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='py-32 px-32'>
+      <div className='lg:py-32 lg:px-32 py-32'>
         <div>Hello, World!</div>
         <ul className='py-4'>
-          <div className='grid grid-cols-4 gap-6'>
+          <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-6'>
             {/* Looping data from backend to render page */}
             {infos.map(({ id, name, timeFrom, timeTo, cvrNR, address }) => (
               <div key={id} className='border-2 py-4 px-4 border-gray-500 mx-auto flex flex-col'>
-                
-                  <li className='font-sans text-xl p-1' key={name}>Business name: {name}</li>
-                  <li className='font-sans text-xl py-1' key={timeFrom}>Opens: {timeFrom}</li>
-                  <li className='font-sans text-xl py-1' key={timeTo}>Closes: {timeTo}</li>
-                  <li className='font-sans text-xl py-1' key={cvrNR}>CVR Number: {cvrNR}</li>
-                  <li className='font-sans text-xl py-1' key={address}>Address: {address}</li>
-                  <div className='py-1' />
-                
+                <li className='font-sans lg:text-xl p-1' key={name}>Business name: {name}</li>
+                <li className='font-sans lg:text-xl py-1' key={timeFrom}>Opens: {timeFrom}</li>
+                <li className='font-sans lg:text-xl py-1' key={timeTo}>Closes: {timeTo}</li>
+                <li className='font-sans lg:text-xl py-1' key={cvrNR}>CVR Number: {cvrNR}</li>
+                <li className='font-sans lg:text-xl py-1' key={address}>Address: {address}</li>
+                <div className='py-1' />
+
               </div>
             ))}
           </div>
