@@ -37,7 +37,7 @@ const Navbar = () => {
                 {/* this is link to my home and styling of my logo */}
                 <div>
                     <Link href='/'>
-                        <div className='text-2xl font-mono font-extralight tracking-tighter underline underline-offset-1 italic decoration-1 align-middlefirst-letter'>
+                        <div className='lg:text-2xl text-xl font-mono font-extralight tracking-tighter underline underline-offset-1 italic decoration-1 align-middlefirst-letter'>
                             Akamali's School Project
                         </div>
                     </Link>
@@ -64,13 +64,14 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Menu */}
-                <div className={nav ? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen text-center ease-in duration-300  border-8 border-cyan-200' : 'sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen text-center ease-in duration-300  border-8 border-cyan-200'}>
+                <div className={nav ? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen text-center ease-in duration-300 bg-slate-300' : 
+                'sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen text-center ease-in duration-300  bg-slate-300'}>
                     <ul>
                         {
 
                             //Loop of MENU_LIST, names and links
                             MENU_LIST.map((mapthis) => (
-                                <li key={mapthis.href} className='p-4 text-3xl border-8 border-green-300'>
+                                <li key={mapthis.href} className='p-4 text-3xl bg-slate-300'>
                                     <Link href={mapthis.href}>{mapthis.text}</Link>
                                 </li>
                             ))
