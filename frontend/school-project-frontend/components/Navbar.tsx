@@ -18,6 +18,8 @@ const Navbar = () => {
         }
     ]
 
+    //React state can be read here: https://nextjs.org/learn/foundations/from-javascript-to-react/adding-interactivity-with-state
+
     //Returns a staful value, and function to update it
     //default value: false
     const [nav, setNav] = useState(false)
