@@ -7,17 +7,25 @@ namespace csharp_mongo_webapi.Infrastructure;
 
 public class MongoConfig
 {
-    //Database name e
+    //
+    //This code is responsible for credential to the Mongo database
+    //
+
+    //Database name ex. my is InfoDatabase
     public string Database { get; set; } = null!;
 
-    //Host
+    //Host ex. localhost
     public string Host { get; set; } = null!;
 
+    //Port ex. 3000
     public int Port { get; set; }
 
+    //User ex. mine is root
     public string User { get; set; } = null!;
 
+    //Password ex. Password123
     public string Password { get; set; } = null!;
+
 
     public string ConnectionString
     {
@@ -25,7 +33,10 @@ public class MongoConfig
         get
         {
             if (string.IsNullOrEmpty(User) || string.IsNullOrEmpty(Password)) return $@"mongodb://{Host}:{Port}";
-            return $@"mongodb://{User}:{Password}@{Host}:{Port}";
+            else
+            {
+                return $@"mongodb://{User}:{Password}@{Host}:{Port}";
+            }
 
         }
     }
