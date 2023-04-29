@@ -8,7 +8,7 @@ public class InfoContext : IInfoContext
     //https://mongodb.github.io/mongo-csharp-driver/2.8/apidocs/html/T_MongoDB_Driver_IMongoDatabase.htm
     private readonly IMongoDatabase _db;
 
-    //Constructor
+    //This constructor makes dependency injection for my database and creates a client object
     public InfoContext(MongoConfig config)
     {
         //creates a client using MongoClient and MongoConfig then gets database

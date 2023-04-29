@@ -7,15 +7,17 @@ public class Info
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    //This is Id
+    //This is Id for differentiate my differents objects
     public string? Id { get; set; }
 
     //Name - ex Brugsen
     [BsonElement("Name")]
     public string Name { get; set; } = null!;
 
+
     //Time from - ex 07:00
     public string TimeFrom { get; set; } = null!;
+
 
     //Time to - ex 16:00
     public string TimeTo { get; set; } = null!;

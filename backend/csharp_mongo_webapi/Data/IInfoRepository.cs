@@ -4,19 +4,23 @@ namespace csharp_mongo_webapi.Data;
 
 public interface IInfoRepository
 {
-    //will get all info in async
+    //
+    //This is interface for Info repository
+    //
+
+    //Get all info in async
     Task<List<Info>> GetInfosAsync();
 
-    //will get 1 info
+    //Get one info using id 
     Task<Info> GetInfoAsync(string id);
 
-    //will create info
+    //Creates info
     Task CreateInfoAsync(Info newInfo);
 
-    //will update info
+    //Updates info using id
     Task UpdateInfoAsync(string id, Info updateInfo);
 
-    //will remove info
+    //Removes info using id
     Task RemoveInfoAsync(string id);
 }
 
