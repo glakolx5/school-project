@@ -1,8 +1,11 @@
-import React from 'react'
+import { useRouter } from 'next/router';
 
 function register() {
+  //router that I will use after successfull posting
+  const router = useRouter();
+
   //Button that handle submit in async  
-  const handleSubmit = async (event : any) => {
+  const handleSubmit = async (event: any) => {
 
     //Blocking default click handling
     event.preventDefault()
@@ -26,19 +29,28 @@ function register() {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type' : 'application/json'
+        'Content-Type': 'application/json'
       },
       //Body from rendered page
       body: JSONdata,
     }
 
     //This will make sure that POST is happening, then a status response from backend controller
-    const response  = await fetch(endPoint, options)
+    const response = await fetch(endPoint, options)
 
     // Status code
     const result = response.status;
 
-    console.log(result);
+    if (result === 404) {
+      return (
+        <div>
+          404
+        </div>
+      )
+    }
+    else{
+      router.push('/')
+    }
 
   }
   return (
